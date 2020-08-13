@@ -5,10 +5,13 @@ import { ThemeProvider } from '@material-ui/styles';
 import theme from './ui/Theme';
 import Header from './ui/Header';
 
+const baseURL = process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : '';
+console.log(baseURL);
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
+      <BrowserRouter basename={`${baseURL}/`}>
         <Header />
         <Switch>
           <Route exact path='/' component={() => <div>Home</div>} />
