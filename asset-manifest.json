@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/arcdevelopment/static/js/main.18d7ffd2.chunk.js",
-    "main.js.map": "/arcdevelopment/static/js/main.18d7ffd2.chunk.js.map",
+    "main.js": "/arcdevelopment/static/js/main.48085ced.chunk.js",
+    "main.js.map": "/arcdevelopment/static/js/main.48085ced.chunk.js.map",
     "runtime-main.js": "/arcdevelopment/static/js/runtime-main.5de153af.js",
     "runtime-main.js.map": "/arcdevelopment/static/js/runtime-main.5de153af.js.map",
-    "static/js/2.46ba1e37.chunk.js": "/arcdevelopment/static/js/2.46ba1e37.chunk.js",
-    "static/js/2.46ba1e37.chunk.js.map": "/arcdevelopment/static/js/2.46ba1e37.chunk.js.map",
+    "static/js/2.977b73b7.chunk.js": "/arcdevelopment/static/js/2.977b73b7.chunk.js",
+    "static/js/2.977b73b7.chunk.js.map": "/arcdevelopment/static/js/2.977b73b7.chunk.js.map",
     "index.html": "/arcdevelopment/index.html",
-    "precache-manifest.019d788cb26cb64dd4c6da0314667bb7.js": "/arcdevelopment/precache-manifest.019d788cb26cb64dd4c6da0314667bb7.js",
+    "precache-manifest.11b86a367d6a7e529b8d832046d608aa.js": "/arcdevelopment/precache-manifest.11b86a367d6a7e529b8d832046d608aa.js",
     "service-worker.js": "/arcdevelopment/service-worker.js",
-    "static/js/2.46ba1e37.chunk.js.LICENSE.txt": "/arcdevelopment/static/js/2.46ba1e37.chunk.js.LICENSE.txt",
+    "static/js/2.977b73b7.chunk.js.LICENSE.txt": "/arcdevelopment/static/js/2.977b73b7.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/arcdevelopment/static/media/logo.ea0de06c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.5de153af.js",
-    "static/js/2.46ba1e37.chunk.js",
-    "static/js/main.18d7ffd2.chunk.js"
+    "static/js/2.977b73b7.chunk.js",
+    "static/js/main.48085ced.chunk.js"
   ]
 }
