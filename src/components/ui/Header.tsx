@@ -41,6 +41,13 @@ interface Props {
   children: React.ReactElement;
 }
 
+interface IRoute {
+  name: string;
+  link: string;
+  activeIndex: number;
+  selectedIndex?: number;
+}
+
 function ElevationScroll({ children }: Props) {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -113,7 +120,7 @@ const useStyles = makeStyles((theme: any) =>
     drawerItem: {
       ...theme.typography.tab,
       color: 'white',
-      opacity: 0.7
+      opacity: 0.7,
     },
     drawerItemEstimate: {
       backgroundColor: theme.palette.common.orange,
@@ -146,80 +153,77 @@ const Header = () => {
   // const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
   const iOS = window && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-  const menuOptions = [
+  const menuOptions: IRoute[] = [
     {
       name: 'Services',
       link: SERVICES_PAGE,
+      activeIndex: 1,
+      selectedIndex: 0,
     },
     {
       name: 'Custom Software Development',
       link: CUSTOM_SOFTWARE_PAGE,
+      activeIndex: 1,
+      selectedIndex: 1,
     },
     {
       name: 'Mobile App Development',
       link: MOBILE_APPS_PAGE,
+      activeIndex: 1,
+      selectedIndex: 2,
     },
     {
       name: 'Website Development',
       link: WEBSITES_PAGE,
+      activeIndex: 1,
+      selectedIndex: 3,
     },
   ];
-  useEffect(() => {
-    switch (window.location.pathname) {
-      case HOME_PAGE:
-        if (currentTab !== 0) {
-          setCurrentTab(0);
-        }
-        break;
 
-      case SERVICES_PAGE:
-        if (currentTab !== 1) {
-          setCurrentTab(1);
-          setSelectedIndex(0);
-        }
-        break;
-      case CUSTOM_SOFTWARE_PAGE:
-        if (currentTab !== 1) {
-          setCurrentTab(1);
-          setSelectedIndex(1);
-        }
-        break;
-      case MOBILE_APPS_PAGE:
-        if (currentTab !== 1) {
-          setCurrentTab(1);
-          setSelectedIndex(2);
-        }
-        break;
-      case WEBSITES_PAGE:
-        if (currentTab !== 1) {
-          setCurrentTab(1);
-          setSelectedIndex(3);
-        }
-        break;
-      case REVOLUTION_PAGE:
-        if (currentTab !== 2) {
-          setCurrentTab(2);
-        }
-        break;
-      case ABOUT_PAGE:
-        if (currentTab !== 3) {
-          setCurrentTab(3);
-        }
-        break;
-      case CONTACT_PAGE:
-        if (currentTab !== 4) {
-          setCurrentTab(4);
-        }
-        break;
-      case ESTIMATE_PAGE:
-        if (currentTab !== 5) {
-          setCurrentTab(5);
-        }
-        break;
-      default:
-        break;
-    }
-  }, [currentTab]);
+  const routes: IRoute[] = [
+    {
+      name: 'Home',
+      link: HOME_PAGE,
+      activeIndex: 0,
+    },
+    {
+      name: 'Services',
+      link: SERVICES_PAGE,
+      activeIndex: 1,
+    },
+    {
+      name: 'The Revolution',
+      link: REVOLUTION_PAGE,
+      activeIndex: 2,
+    },
+    {
+      name: 'About us',
+      link: ABOUT_PAGE,
+      activeIndex: 3,
+    },
+    {
+      name: 'Contact',
+      link: CONTACT_PAGE,
+      activeIndex: 4,
+    },
+  ];
+
+  useEffect(() => {
+    [...menuOptions, ...routes].forEach((route: IRoute) => {
+      switch (window.location.pathname) {
+        case `${route.link}`:
+          if (currentTab !== route.activeIndex) {
+            setCurrentTab(route.activeIndex);
+            if (route.selectedIndex && route.selectedIndex !== selectedIndex) {
+              setSelectedIndex(route.selectedIndex);
+            }
+          }
+          break;
+        default:
+          break;
+      }
+    });
+  }, [currentTab, menuOptions, selectedIndex, routes]);
 
   const handleChange = (e: any, value: number) => {
     setCurrentTab(value);
