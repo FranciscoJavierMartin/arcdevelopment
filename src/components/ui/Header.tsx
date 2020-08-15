@@ -105,6 +105,9 @@ const useStyles = makeStyles((theme: any) =>
       marginLeft: '50px',
       marginRight: '25px',
       height: '45px',
+      "&:hover": {
+        backgroundColor: theme.palette.secondary.light
+      }
     },
     menu: {
       backgroundColor: theme.palette.common.blue,
@@ -159,7 +162,6 @@ const Header = () => {
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('md'));
-  // const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
   const iOS = window && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
   const handleChange = (e: any, value: number) => {

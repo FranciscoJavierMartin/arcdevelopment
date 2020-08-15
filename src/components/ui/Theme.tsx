@@ -3,19 +3,18 @@ import { createMuiTheme } from '@material-ui/core/styles';
 const arcBlue = '#0B72B9';
 const arcOrange = '#FFBA60';
 
-// FIXME: Fix typescript support because cause problems
-export default createMuiTheme({
+export default createMuiTheme(undefined, {
   palette: {
     common: {
       blue: arcBlue,
       orange: arcOrange,
     },
     primary: {
-      main: arcBlue
+      main: arcBlue,
     },
     secondary: {
-      main: arcOrange
-    }
+      main: arcOrange,
+    },
   },
   typography: {
     tab: {
@@ -29,6 +28,6 @@ export default createMuiTheme({
       fontSize: '1rem',
       textTransform: 'none',
       color: 'white',
-    }
-  }
+    },
+  },
 });
