@@ -6,7 +6,7 @@ import theme from './ui/Theme';
 import Header from './ui/Header';
 import {
   HOME_PAGE,
-  SERVICES_PAGES,
+  SERVICES_PAGE,
   CUSTOM_SOFTWARE_PAGE,
   MOBILE_APPS_PAGE,
   WEBSITES_PAGE,
@@ -28,7 +28,7 @@ function App() {
           <Route exact path={HOME_PAGE} component={() => <div>Home</div>} />
           <Route
             exact
-            path={SERVICES_PAGES}
+            path={SERVICES_PAGE}
             component={() => <div>Services</div>}
           />
           <Route

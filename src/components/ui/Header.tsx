@@ -10,6 +10,9 @@ import {
   MenuItem,
   IconButton,
   SwipeableDrawer,
+  List,
+  ListItem,
+  ListItemText,
   useScrollTrigger,
   useMediaQuery,
 } from '@material-ui/core';
@@ -21,7 +24,7 @@ import {
   CUSTOM_SOFTWARE_PAGE,
   MOBILE_APPS_PAGE,
   WEBSITES_PAGE,
-  SERVICES_PAGES,
+  SERVICES_PAGE,
   HOME_PAGE,
   REVOLUTION_PAGE,
   ABOUT_PAGE,
@@ -104,16 +107,30 @@ const useStyles = makeStyles((theme: any) =>
         opacity: 1,
       },
     },
+    drawer: {
+      backgroundColor: theme.palette.common.blue,
+    },
+    drawerItem: {
+      ...theme.typography.tab,
+      color: 'white',
+      opacity: 0.7
+    },
+    drawerItemEstimate: {
+      backgroundColor: theme.palette.common.orange,
+    },
     drawerIconContainer: {
       marginLeft: 'auto',
       '&:hover': {
         backgroundColor: 'transparent',
-      }
+      },
     },
     drawerIcon: {
       height: '50px',
-      width: '50px'
-    }
+      width: '50px',
+    },
+    drawerItemSelected: {
+      opacity: 1,
+    },
   })
 );
 
@@ -132,7 +149,7 @@ const Header = () => {
   const menuOptions = [
     {
       name: 'Services',
-      link: SERVICES_PAGES,
+      link: SERVICES_PAGE,
     },
     {
       name: 'Custom Software Development',
@@ -155,7 +172,7 @@ const Header = () => {
         }
         break;
 
-      case SERVICES_PAGES:
+      case SERVICES_PAGE:
         if (currentTab !== 1) {
           setCurrentTab(1);
           setSelectedIndex(0);
@@ -300,10 +317,149 @@ const Header = () => {
         open={openDrawer}
         onClose={() => setOpenDrawer(false)}
         onOpen={() => setOpenDrawer(true)}
+        classes={{ paper: classes.drawer }}
       >
-        Example drawer
+        <List disablePadding>
+          <ListItem
+            onClick={() => {
+              setOpenDrawer(false);
+              setCurrentTab(0);
+            }}
+            divider
+            button
+            component={Link}
+            to={HOME_PAGE}
+            selected={currentTab === 0}
+          >
+            <ListItemText
+              disableTypography
+              className={
+                currentTab === 0
+                  ? [classes.drawerItem, classes.drawerItemSelected].join(' ')
+                  : classes.drawerItem
+              }
+            >
+              Home
+            </ListItemText>
+          </ListItem>
+          <ListItem
+            onClick={() => {
+              setOpenDrawer(false);
+              setCurrentTab(1);
+            }}
+            divider
+            button
+            component={Link}
+            to={SERVICES_PAGE}
+            selected={currentTab === 1}
+          >
+            <ListItemText
+              disableTypography
+              className={
+                currentTab === 1
+                  ? [classes.drawerItem, classes.drawerItemSelected].join(' ')
+                  : classes.drawerItem
+              }
+            >
+              Services
+            </ListItemText>
+          </ListItem>
+          <ListItem
+            onClick={() => {
+              setOpenDrawer(false);
+              setCurrentTab(2);
+            }}
+            divider
+            button
+            component={Link}
+            to={REVOLUTION_PAGE}
+            selected={currentTab === 2}
+          >
+            <ListItemText
+              disableTypography
+              className={
+                currentTab === 2
+                  ? [classes.drawerItem, classes.drawerItemSelected].join(' ')
+                  : classes.drawerItem
+              }
+            >
+              The Revolution
+            </ListItemText>
+          </ListItem>
+          <ListItem
+            onClick={() => {
+              setOpenDrawer(false);
+              setCurrentTab(3);
+            }}
+            divider
+            button
+            component={Link}
+            to={ABOUT_PAGE}
+            selected={currentTab === 3}
+          >
+            <ListItemText
+              disableTypography
+              className={
+                currentTab === 3
+                  ? [classes.drawerItem, classes.drawerItemSelected].join(' ')
+                  : classes.drawerItem
+              }
+            >
+              About Us
+            </ListItemText>
+          </ListItem>
+          <ListItem
+            onClick={() => {
+              setOpenDrawer(false);
+              setCurrentTab(4);
+            }}
+            divider
+            button
+            component={Link}
+            to={CONTACT_PAGE}
+            selected={currentTab === 4}
+          >
+            <ListItemText
+              disableTypography
+              className={
+                currentTab === 4
+                  ? [classes.drawerItem, classes.drawerItemSelected].join(' ')
+                  : classes.drawerItem
+              }
+            >
+              Contact
+            </ListItemText>
+          </ListItem>
+          <ListItem
+            onClick={() => {
+              setOpenDrawer(false);
+              setCurrentTab(5);
+            }}
+            divider
+            button
+            component={Link}
+            to={ESTIMATE_PAGE}
+            className={classes.drawerItemEstimate}
+            selected={currentTab === 5}
+          >
+            <ListItemText
+              className={
+                currentTab === 5
+                  ? [classes.drawerItem, classes.drawerItemSelected].join(' ')
+                  : classes.drawerItem
+              }
+              disableTypography
+            >
+              Free Estimate
+            </ListItemText>
+          </ListItem>
+        </List>
       </SwipeableDrawer>
-      <IconButton onClick={() => setOpenDrawer(!openDrawer)} disableRipple className={classes.drawerIconContainer}>
+      <IconButton
+        onClick={() => setOpenDrawer(!openDrawer)}
+        disableRipple
+        className={classes.drawerIconContainer}
+      >
         <MenuIcon className={classes.drawerIcon} />
       </IconButton>
     </React.Fragment>

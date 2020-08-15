@@ -1,20 +1,20 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const arcBlue = '#0B72B9';
-const arcOrgange = '#FFBA60';
+const arcOrange = '#FFBA60';
 
 // FIXME: Fix typescript support because cause problems
 export default createMuiTheme({
   palette: {
     common: {
       blue: arcBlue,
-      organge: arcOrgange,
+      orange: arcOrange,
     },
     primary: {
       main: arcBlue
     },
     secondary: {
-      main: arcOrgange
+      main: arcOrange
     }
   },
   typography: {

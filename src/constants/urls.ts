@@ -1,5 +1,5 @@
 export const HOME_PAGE = '/';
-export const SERVICES_PAGES = '/services';
+export const SERVICES_PAGE = '/services';
 export const CUSTOM_SOFTWARE_PAGE = '/customsoftware';
 export const MOBILE_APPS_PAGE = '/mobileapps';
 export const WEBSITES_PAGE = '/websites';
