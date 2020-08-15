@@ -46,6 +46,10 @@ interface IRoute {
   link: string;
   activeIndex: number;
   selectedIndex?: number;
+  // mouseOver?: ((event: MouseEvent<HTMLAnchorElement, MouseEvent>) => void);
+  mouseOver?: any;
+  ariaOwns?: string;
+  ariaPopup?: 'true';
 }
 
 function ElevationScroll({ children }: Props) {
@@ -153,6 +157,26 @@ const Header = () => {
   // const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
   const iOS = window && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
+  const handleChange = (e: any, value: number) => {
+    setCurrentTab(value);
+  };
+
+  const handleClick = (e: any) => {
+    setAnchorEl(e.currentTarget);
+    setOpenMenu(true);
+  };
+
+  const handleMenuItemClick = (e: any, i: number) => {
+    setAnchorEl(null);
+    setOpenMenu(false);
+    setSelectedIndex(i);
+  };
+
+  const handleClose = (e: any) => {
+    setAnchorEl(null);
+    setOpenMenu(false);
+  };
+
   const menuOptions: IRoute[] = [
     {
       name: 'Services',
@@ -190,6 +214,9 @@ const Header = () => {
       name: 'Services',
       link: SERVICES_PAGE,
       activeIndex: 1,
+      ariaOwns: anchorEl ? 'simple-meny' : undefined,
+      ariaPopup: anchorEl ? 'true' : undefined,
+      mouseOver: handleClick,
     },
     {
       name: 'The Revolution',
@@ -225,26 +252,6 @@ const Header = () => {
     });
   }, [currentTab, menuOptions, selectedIndex, routes]);
 
-  const handleChange = (e: any, value: number) => {
-    setCurrentTab(value);
-  };
-
-  const handleClick = (e: any) => {
-    setAnchorEl(e.currentTarget);
-    setOpenMenu(true);
-  };
-
-  const handleMenuItemClick = (e: any, i: number) => {
-    setAnchorEl(null);
-    setOpenMenu(false);
-    setSelectedIndex(i);
-  };
-
-  const handleClose = (e: any) => {
-    setAnchorEl(null);
-    setOpenMenu(false);
-  };
-
   const tabs = (
     <React.Fragment>
       <Tabs
@@ -253,34 +260,18 @@ const Header = () => {
         onChange={handleChange}
         indicatorColor='primary'
       >
-        <Tab className={classes.tab} component={Link} to='/' label='Home' />
-        <Tab
-          aria-owns={anchorEl ? 'simple-meny' : undefined}
-          aria-haspopup={anchorEl ? 'true' : undefined}
-          className={classes.tab}
-          component={Link}
-          onMouseOver={handleClick}
-          to='/services'
-          label='Services'
-        />
-        <Tab
-          className={classes.tab}
-          component={Link}
-          to='/revolution'
-          label='The Revolution'
-        />
-        <Tab
-          className={classes.tab}
-          component={Link}
-          to='/about'
-          label='About Us'
-        />
-        <Tab
-          className={classes.tab}
-          component={Link}
-          to='/contact'
-          label='Contact Us'
-        />
+        {routes.map((route: IRoute) => (
+          <Tab
+            className={classes.tab}
+            component={Link}
+            to={route.link}
+            label={route.name}
+            aria-owns={route.ariaOwns}
+            aria-haspopup={route.ariaPopup}
+            onMouseOver={route.mouseOver}
+            key={route.name}
+          />
+        ))}
       </Tabs>
       <Button variant='contained' color='secondary' className={classes.button}>
         Free Estimate
@@ -293,6 +284,7 @@ const Header = () => {
         classes={{ paper: classes.menu }}
         MenuListProps={{ onMouseLeave: handleClose }}
         elevation={0}
+        keepMounted
       >
         {menuOptions.map((menuOption, index: number) => (
           <MenuItem
@@ -324,116 +316,31 @@ const Header = () => {
         classes={{ paper: classes.drawer }}
       >
         <List disablePadding>
-          <ListItem
-            onClick={() => {
-              setOpenDrawer(false);
-              setCurrentTab(0);
-            }}
-            divider
-            button
-            component={Link}
-            to={HOME_PAGE}
-            selected={currentTab === 0}
-          >
-            <ListItemText
-              disableTypography
-              className={
-                currentTab === 0
-                  ? [classes.drawerItem, classes.drawerItemSelected].join(' ')
-                  : classes.drawerItem
-              }
+          {routes.map((route: IRoute) => (
+            <ListItem
+              onClick={() => {
+                setOpenDrawer(false);
+                setCurrentTab(route.activeIndex);
+              }}
+              divider
+              button
+              component={Link}
+              to={route.link}
+              selected={currentTab === route.activeIndex}
+              key={route.name}
             >
-              Home
-            </ListItemText>
-          </ListItem>
-          <ListItem
-            onClick={() => {
-              setOpenDrawer(false);
-              setCurrentTab(1);
-            }}
-            divider
-            button
-            component={Link}
-            to={SERVICES_PAGE}
-            selected={currentTab === 1}
-          >
-            <ListItemText
-              disableTypography
-              className={
-                currentTab === 1
-                  ? [classes.drawerItem, classes.drawerItemSelected].join(' ')
-                  : classes.drawerItem
-              }
-            >
-              Services
-            </ListItemText>
-          </ListItem>
-          <ListItem
-            onClick={() => {
-              setOpenDrawer(false);
-              setCurrentTab(2);
-            }}
-            divider
-            button
-            component={Link}
-            to={REVOLUTION_PAGE}
-            selected={currentTab === 2}
-          >
-            <ListItemText
-              disableTypography
-              className={
-                currentTab === 2
-                  ? [classes.drawerItem, classes.drawerItemSelected].join(' ')
-                  : classes.drawerItem
-              }
-            >
-              The Revolution
-            </ListItemText>
-          </ListItem>
-          <ListItem
-            onClick={() => {
-              setOpenDrawer(false);
-              setCurrentTab(3);
-            }}
-            divider
-            button
-            component={Link}
-            to={ABOUT_PAGE}
-            selected={currentTab === 3}
-          >
-            <ListItemText
-              disableTypography
-              className={
-                currentTab === 3
-                  ? [classes.drawerItem, classes.drawerItemSelected].join(' ')
-                  : classes.drawerItem
-              }
-            >
-              About Us
-            </ListItemText>
-          </ListItem>
-          <ListItem
-            onClick={() => {
-              setOpenDrawer(false);
-              setCurrentTab(4);
-            }}
-            divider
-            button
-            component={Link}
-            to={CONTACT_PAGE}
-            selected={currentTab === 4}
-          >
-            <ListItemText
-              disableTypography
-              className={
-                currentTab === 4
-                  ? [classes.drawerItem, classes.drawerItemSelected].join(' ')
-                  : classes.drawerItem
-              }
-            >
-              Contact
-            </ListItemText>
-          </ListItem>
+              <ListItemText
+                className={
+                  currentTab === route.activeIndex
+                    ? [classes.drawerItem, classes.drawerItemSelected].join(' ')
+                    : classes.drawerItem
+                }
+                disableTypography
+              >
+                {route.name}
+              </ListItemText>
+            </ListItem>
+          ))}
           <ListItem
             onClick={() => {
               setOpenDrawer(false);
