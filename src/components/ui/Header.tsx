@@ -52,6 +52,13 @@ interface IRoute {
   ariaPopup?: 'true';
 }
 
+interface IHeaderProps {
+  currentTab: number;
+  setCurrentTab: (value: number) => void;
+  selectedIndex: number;
+  setSelectedIndex: (value: number) => void;
+}
+
 function ElevationScroll({ children }: Props) {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -153,12 +160,15 @@ const useStyles = makeStyles((theme: any) =>
   })
 );
 
-const Header = () => {
-  const [currentTab, setCurrentTab] = useState<number>(0);
+const Header: React.FC<IHeaderProps> = ({
+  currentTab,
+  setCurrentTab,
+  selectedIndex,
+  setSelectedIndex,
+}) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
-  const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('md'));
@@ -257,7 +267,14 @@ const Header = () => {
           break;
       }
     });
-  }, [currentTab, menuOptions, selectedIndex, routes]);
+  }, [
+    currentTab,
+    setCurrentTab,
+    menuOptions,
+    selectedIndex,
+    setSelectedIndex,
+    routes,
+  ]);
 
   const tabs = (
     <React.Fragment>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/styles';
 
@@ -21,16 +21,20 @@ const baseURL =
   process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : '';
 
 function App() {
+  const [currentTab, setCurrentTab] = useState<number>(0);
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
+
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter basename={`${baseURL}/`}>
-        <Header />
+        <Header
+          currentTab={currentTab}
+          setCurrentTab={setCurrentTab}
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+        />
         <Switch>
-          <Route
-            exact
-            path={HOME_PAGE}
-            component={() => <div>Home</div>}
-          />
+          <Route exact path={HOME_PAGE} component={() => <div>Home</div>} />
           <Route
             exact
             path={SERVICES_PAGE}
@@ -68,7 +72,12 @@ function App() {
             component={() => <div>Estimate</div>}
           />
         </Switch>
-        <Footer />
+        <Footer
+          currentTab={currentTab}
+          setCurrentTab={setCurrentTab}
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+        />
       </BrowserRouter>
     </ThemeProvider>
   );
