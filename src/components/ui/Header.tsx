@@ -105,9 +105,9 @@ const useStyles = makeStyles((theme: any) =>
       marginLeft: '50px',
       marginRight: '25px',
       height: '45px',
-      "&:hover": {
-        backgroundColor: theme.palette.secondary.light
-      }
+      '&:hover': {
+        backgroundColor: theme.palette.secondary.light,
+      },
     },
     menu: {
       backgroundColor: theme.palette.common.blue,
@@ -280,7 +280,13 @@ const Header = () => {
           />
         ))}
       </Tabs>
-      <Button variant='contained' color='secondary' className={classes.button}>
+      <Button
+        variant='contained'
+        color='secondary'
+        className={classes.button}
+        component={Link}
+        to={ESTIMATE_PAGE}
+      >
         Free Estimate
       </Button>
       <Menu
@@ -291,7 +297,7 @@ const Header = () => {
         classes={{ paper: classes.menu }}
         MenuListProps={{ onMouseLeave: handleClose }}
         elevation={0}
-        style={{zIndex: 1302}}
+        style={{ zIndex: 1302 }}
         keepMounted
       >
         {menuOptions.map((menuOption, index: number) => (

@@ -4,6 +4,7 @@ import { ThemeProvider } from '@material-ui/styles';
 
 import theme from './ui/Theme';
 import Header from './ui/Header';
+import Footer from './ui/Footer';
 import {
   HOME_PAGE,
   SERVICES_PAGE,
@@ -25,7 +26,11 @@ function App() {
       <BrowserRouter basename={`${baseURL}/`}>
         <Header />
         <Switch>
-          <Route exact path={HOME_PAGE} component={() => <div>Home</div>} />
+          <Route
+            exact
+            path={HOME_PAGE}
+            component={() => <div>Home</div>}
+          />
           <Route
             exact
             path={SERVICES_PAGE}
@@ -63,6 +68,7 @@ function App() {
             component={() => <div>Estimate</div>}
           />
         </Switch>
+        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );
