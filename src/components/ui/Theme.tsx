@@ -14,7 +14,7 @@ export default createMuiTheme(undefined, {
     },
     secondary: {
       main: arcOrange,
-      light: '#FFC77F'
+      light: '#FFC77F',
     },
   },
   typography: {
@@ -30,5 +30,21 @@ export default createMuiTheme(undefined, {
       textTransform: 'none',
       color: 'white',
     },
+    h2: {
+      fontFamily: 'Raleway',
+      fontWeight: 700,
+      fontSize: '2.5rem',
+      color: `${arcBlue}`,
+      lineHeight: 1.5,
+    },
+    learnButton: {
+      borderColor: arcBlue,
+      borderWidth: 2,
+      textTransform: "none",
+      color: arcBlue,
+      borderRadius: 50,
+      fontFamily: "Roboto",
+      fontWeight: "bold"
+    }
   },
 });
