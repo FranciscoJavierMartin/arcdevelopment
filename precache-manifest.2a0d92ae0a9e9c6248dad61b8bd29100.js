@@ -1,23 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e7319aa610957acf742a014ac210dd62",
+    "revision": "2c18653db625d380b1eedeb5dc490e14",
     "url": "/arcdevelopment/index.html"
   },
   {
-    "revision": "d46dfea39c1165790124",
-    "url": "/arcdevelopment/static/js/2.035c608d.chunk.js"
+    "revision": "f6b70bac30596f3345f4",
+    "url": "/arcdevelopment/static/js/2.55ca72ab.chunk.js"
   },
   {
     "revision": "14c54f8d621b663941f58f815237ec03",
-    "url": "/arcdevelopment/static/js/2.035c608d.chunk.js.LICENSE.txt"
+    "url": "/arcdevelopment/static/js/2.55ca72ab.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "424f2e6dda70d69d567c",
-    "url": "/arcdevelopment/static/js/main.33e92a72.chunk.js"
+    "revision": "fe5609939e47b363e2ba",
+    "url": "/arcdevelopment/static/js/main.53b0a27b.chunk.js"
   },
   {
     "revision": "68f0c2397112f3bb97e9",
     "url": "/arcdevelopment/static/js/runtime-main.5de153af.js"
+  },
+  {
+    "revision": "350387f5ee9e1569dc00c4952fca7cc8",
+    "url": "/arcdevelopment/static/media/Custom Software Icon.350387f5.svg"
   },
   {
     "revision": "e227d87b2dec28a248985906d655c9ed",
