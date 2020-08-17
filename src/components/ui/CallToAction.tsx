@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Grid,
   Typography,
@@ -8,8 +9,14 @@ import {
   useMediaQuery,
 } from '@material-ui/core';
 import ButtonArrow from './ButtonArrow';
+import { ESTIMATE_PAGE , REVOLUTION_PAGE} from '../../constants/urls';
+
 import background from '../../assets/background.jpg';
 import mobileBackground from '../../assets/mobileBackground.jpg';
+
+interface ICallToActionProps {
+  setCurrentTab: (value: number) => void;
+}
 
 const useStyles = makeStyles((theme) => ({
   learnButton: {
@@ -50,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CallToAction = () => {
+const CallToAction: React.FC<ICallToActionProps> = ({ setCurrentTab }) => {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
@@ -81,7 +88,13 @@ const CallToAction = () => {
               Take advantage of the 21st Century.
             </Typography>
             <Grid container item justify={matchesSM ? 'center' : undefined}>
-              <Button variant='outlined' className={classes.learnButton}>
+              <Button
+                variant='outlined'
+                className={classes.learnButton}
+                onClick={() => setCurrentTab(2)}
+                component={Link}
+                to={REVOLUTION_PAGE}
+              >
                 <span style={{ marginRight: 5 }}>Learn More</span>
                 <ButtonArrow
                   width={10}
@@ -94,7 +107,13 @@ const CallToAction = () => {
         </Grid>
       </Grid>
       <Grid item>
-        <Button variant='contained' className={classes.estimateButton}>
+        <Button
+          variant='contained'
+          className={classes.estimateButton}
+          component={Link}
+          to={ESTIMATE_PAGE}
+          onClick={() => setCurrentTab(5)}
+        >
           Free Estimate
         </Button>
       </Grid>

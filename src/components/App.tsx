@@ -17,7 +17,7 @@ import {
   ESTIMATE_PAGE,
 } from '../constants/urls';
 
-import LandingPage from './LandingPage';
+import HomePage from './HomePage';
 
 const baseURL =
   process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : '';
@@ -36,7 +36,17 @@ function App() {
           setSelectedIndex={setSelectedIndex}
         />
         <Switch>
-          <Route exact path={HOME_PAGE} component={LandingPage} />
+          <Route
+            exact
+            path={HOME_PAGE}
+            render={(props) => (
+              <HomePage
+                {...props}
+                setCurrentTab={setCurrentTab}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
+          />
           <Route
             exact
             path={SERVICES_PAGE}
@@ -75,9 +85,7 @@ function App() {
           />
         </Switch>
         <Footer
-          currentTab={currentTab}
           setCurrentTab={setCurrentTab}
-          selectedIndex={selectedIndex}
           setSelectedIndex={setSelectedIndex}
         />
       </BrowserRouter>

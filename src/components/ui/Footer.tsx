@@ -20,9 +20,7 @@ import twitter from '../../assets/twitter.svg';
 import instagram from '../../assets/instagram.svg';
 
 interface IFooterProps {
-  currentTab: number;
   setCurrentTab: (value: number) => void;
-  selectedIndex: number;
   setSelectedIndex: (value: number) => void;
 }
 
@@ -70,14 +68,12 @@ const useStyles = makeStyles((theme: any) => ({
     right: '1.5em',
     [theme.breakpoints.down('xs')]: {
       right: '0.6em',
-    }
+    },
   },
 }));
 
 const Footer: React.FC<IFooterProps> = ({
-  currentTab,
   setCurrentTab,
-  selectedIndex,
   setSelectedIndex,
 }) => {
   const classes = useStyles();

@@ -112,9 +112,6 @@ const useStyles = makeStyles((theme: any) =>
       marginLeft: '50px',
       marginRight: '25px',
       height: '45px',
-      '&:hover': {
-        backgroundColor: theme.palette.secondary.light,
-      },
     },
     menu: {
       backgroundColor: theme.palette.common.blue,
@@ -263,6 +260,9 @@ const Header: React.FC<IHeaderProps> = ({
             }
           }
           break;
+        case ESTIMATE_PAGE:
+          setCurrentTab(5);
+          break;
         default:
           break;
       }
@@ -303,6 +303,7 @@ const Header: React.FC<IHeaderProps> = ({
         className={classes.button}
         component={Link}
         to={ESTIMATE_PAGE}
+        onClick={() => setCurrentTab(5)}
       >
         Free Estimate
       </Button>

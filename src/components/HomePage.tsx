@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Lottie from 'react-lottie';
 import {
   Grid,
@@ -12,12 +13,27 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import ButtonArrow from './ui/ButtonArrow';
 import CallToAction from './ui/CallToAction';
 
+import {
+  ESTIMATE_PAGE,
+  REVOLUTION_PAGE,
+  CUSTOM_SOFTWARE_PAGE,
+  MOBILE_APPS_PAGE,
+  WEBSITES_PAGE,
+  CONTACT_PAGE,
+  ABOUT_PAGE,
+} from '../constants/urls';
+
 import animationData from '../animations/landinganimation/data';
 import customSoftwareIcon from '../assets/Custom Software Icon.svg';
 import mobileAppsIcon from '../assets/mobileIcon.svg';
 import websitesIcon from '../assets/websiteIcon.svg';
 import revolutionBackground from '../assets/repeatingBackground.svg';
 import infoBackground from '../assets/infoBackground.svg';
+
+interface IHomePageProps {
+  setCurrentTab: (value: number) => void;
+  setSelectedIndex: (value: number) => void;
+}
 
 const useStyles = makeStyles((theme) => ({
   animation: {
@@ -36,9 +52,6 @@ const useStyles = makeStyles((theme) => ({
     height: 45,
     width: 145,
     marginRight: 40,
-    '&:hover': {
-      backgroundColor: theme.palette.secondary.light,
-    },
   },
   buttonContainer: {
     marginTop: '1em',
@@ -119,12 +132,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    height: '100%',
+    height: '80em',
     width: '100%',
   },
 }));
 
-const LandingPage: React.FC = () => {
+const HomePage: React.FC<IHomePageProps> = ({
+  setCurrentTab,
+  setSelectedIndex,
+}) => {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
@@ -156,7 +172,13 @@ const LandingPage: React.FC = () => {
               className={classes.buttonContainer}
             >
               <Grid item>
-                <Button className={classes.estimateButton} variant='contained'>
+                <Button
+                  className={classes.estimateButton}
+                  variant='contained'
+                  component={Link}
+                  to={ESTIMATE_PAGE}
+                  onClick={() => setCurrentTab(5)}
+                >
                   Free Estimate
                 </Button>
               </Grid>
@@ -178,7 +200,7 @@ const LandingPage: React.FC = () => {
         </Grid>
       </Grid>
       {/*------ End Hero block ------*/}
-      {/*------ Services block ------*/}
+      {/*------ Custom Software Service block ------*/}
       <Grid item>
         <Grid
           container
@@ -201,7 +223,16 @@ const LandingPage: React.FC = () => {
               Complete digital solutions, from investigation to{' '}
               <span className={classes.specialText}>celebration</span>
             </Typography>
-            <Button variant='outlined' className={classes.learnButton}>
+            <Button
+              variant='outlined'
+              className={classes.learnButton}
+              component={Link}
+              to={CUSTOM_SOFTWARE_PAGE}
+              onClick={() => {
+                setCurrentTab(1);
+                setSelectedIndex(1);
+              }}
+            >
               <span style={{ marginRight: 15 }}>Learn More</span>
               <ButtonArrow
                 width={10}
@@ -242,7 +273,16 @@ const LandingPage: React.FC = () => {
               Integrate your web experience or create a standalone app
               {matchesSM ? null : <br />}with either mobile platform.
             </Typography>
-            <Button variant='outlined' className={classes.learnButton}>
+            <Button
+              variant='outlined'
+              className={classes.learnButton}
+              component={Link}
+              to={MOBILE_APPS_PAGE}
+              onClick={() => {
+                setCurrentTab(1);
+                setSelectedIndex(2);
+              }}
+            >
               <span style={{ marginRight: 15 }}>Learn More</span>
               <ButtonArrow
                 width={10}
@@ -283,7 +323,16 @@ const LandingPage: React.FC = () => {
             <Typography variant='subtitle1'>
               Optimized for Search Engines, built for speed.
             </Typography>
-            <Button variant='outlined' className={classes.learnButton}>
+            <Button
+              variant='outlined'
+              className={classes.learnButton}
+              component={Link}
+              to={WEBSITES_PAGE}
+              onClick={() => {
+                setCurrentTab(1);
+                setSelectedIndex(3);
+              }}
+            >
               <span style={{ marginRight: 15 }}>Learn More</span>
               <ButtonArrow
                 width={10}
@@ -330,6 +379,9 @@ const LandingPage: React.FC = () => {
                   <Button
                     className={classes.learnButtonHero}
                     variant='outlined'
+                    component={Link}
+                    to={REVOLUTION_PAGE}
+                    onClick={() => setCurrentTab(2)}
                   >
                     <span style={{ marginRight: 10 }}>Learn More</span>
                     <ButtonArrow
@@ -351,7 +403,7 @@ const LandingPage: React.FC = () => {
         container
         direction='row'
         alignItems='center'
-        style={{ height: '80em' }}
+        className={classes.infoBackground}
       >
         <Grid
           item
@@ -368,7 +420,11 @@ const LandingPage: React.FC = () => {
             sm
             style={{ marginLeft: matchesXS ? 0 : matchesSM ? '2em' : '5em' }}
           >
-            <Grid container direction='column'>
+            <Grid
+              container
+              direction='column'
+              style={{ marginBottom: matchesXS ? '10em' : 0 }}
+            >
               <Typography variant='h2' style={{ color: 'white' }}>
                 About Us
               </Typography>
@@ -378,6 +434,9 @@ const LandingPage: React.FC = () => {
                   variant='outlined'
                   className={classes.learnButton}
                   style={{ color: 'white', borderColor: 'white' }}
+                  component={Link}
+                  to={ABOUT_PAGE}
+                  onClick={() => setCurrentTab(3)}
                 >
                   <span style={{ marginRight: 10 }}>Learn More</span>
                   <ButtonArrow width={10} height={10} fill='white' />
@@ -403,6 +462,9 @@ const LandingPage: React.FC = () => {
                   variant='outlined'
                   className={classes.learnButton}
                   style={{ color: 'white', borderColor: 'white' }}
+                  component={Link}
+                  to={CONTACT_PAGE}
+                  onClick={() => setCurrentTab(4)}
                 >
                   <span style={{ marginRight: 10 }}>Learn More</span>
                   <ButtonArrow width={10} height={10} fill='white' />
@@ -411,16 +473,15 @@ const LandingPage: React.FC = () => {
             </Grid>
           </Grid>
         </Grid>
-        <div className={classes.infoBackground} />
       </Grid>
       {/*------ End Information block ------*/}
       {/*------ Call to action block ------*/}
       <Grid item>
-        <CallToAction/>
+        <CallToAction setCurrentTab={setCurrentTab} />
       </Grid>
       {/*------ End Call to action block ------*/}
     </Grid>
   );
 };
 
-export default LandingPage;
+export default HomePage;

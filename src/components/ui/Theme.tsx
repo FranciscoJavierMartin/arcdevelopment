@@ -30,6 +30,9 @@ export default createMuiTheme(undefined, {
       fontSize: '1rem',
       textTransform: 'none',
       color: 'white',
+      '&:hover': {
+        backgroundColor: '#FFC77F',
+      },
     },
     h2: {
       fontFamily: 'Raleway',
