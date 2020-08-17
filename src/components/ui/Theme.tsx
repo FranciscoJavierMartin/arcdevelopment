@@ -54,14 +54,19 @@ export default createMuiTheme(undefined, {
       fontWeight: 300,
       color: arcGrey,
     },
+    subtitle2: {
+      color: 'white',
+      fontSize: '1.25rem',
+      fontWeight: 300,
+    },
     learnButton: {
       borderColor: arcBlue,
       borderWidth: 2,
-      textTransform: "none",
+      textTransform: 'none',
       color: arcBlue,
       borderRadius: 50,
-      fontFamily: "Roboto",
-      fontWeight: "bold"
-    }
+      fontFamily: 'Roboto',
+      fontWeight: 'bold',
+    },
   },
 });
