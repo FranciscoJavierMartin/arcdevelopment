@@ -7,6 +7,7 @@ import ButtonArrow from './ui/ButtonArrow';
 import animationData from '../animations/landinganimation/data';
 import customSoftwareIcon from '../assets/Custom Software Icon.svg';
 import mobileAppsIcon from '../assets/mobileIcon.svg';
+import websitesIcon from '../assets/websiteIcon.svg';
 
 const useStyles = makeStyles((theme) => ({
   animation: {
@@ -137,8 +138,8 @@ const LandingPage: React.FC = () => {
         </Grid>
       </Grid>
       {/*------ End Hero block ------*/}
+      {/*------ Services block ------*/}
       <Grid item>
-        {/*------ Services block ------*/}
         <Grid
           container
           direction='row'
@@ -179,8 +180,8 @@ const LandingPage: React.FC = () => {
         </Grid>
       </Grid>
       {/*------ End Custon software block ------*/}
+      {/*------ iOS/Android block ------*/}
       <Grid item>
-        {/*------ iOS/Android block ------*/}
         <Grid
           container
           direction='row'
@@ -220,6 +221,47 @@ const LandingPage: React.FC = () => {
         </Grid>
       </Grid>
       {/*------- End iOS/Android block--------*/}
+      {/*------ Websites block ------*/}
+      <Grid item>
+        <Grid
+          container
+          direction='row'
+          className={classes.serviceContainer}
+          justify={matchesSM ? 'center' : undefined}
+        >
+          <Grid
+            item
+            style={{
+              marginLeft: matchesSM ? 0 : '5em',
+              textAlign: matchesSM ? 'center' : undefined,
+            }}
+          >
+            <Typography variant='h4'>Websites Development</Typography>
+            <Typography variant='subtitle1' className={classes.subtitle}>
+              Reach More. Discover More. Sell More.
+            </Typography>
+            <Typography variant='subtitle1'>
+              Optimized for Search Engines, built for speed.
+            </Typography>
+            <Button variant='outlined' className={classes.learnButton}>
+              <span style={{ marginRight: 15 }}>Learn More</span>
+              <ButtonArrow
+                width={10}
+                height={10}
+                fill={(theme.palette.common as any).blue}
+              />
+            </Button>
+          </Grid>
+          <Grid item>
+            <img
+              className={classes.icon}
+              alt='website icon'
+              src={websitesIcon}
+            />
+          </Grid>
+        </Grid>
+      </Grid>
+      {/*------ End Websites block ------*/}
     </Grid>
   );
 };
