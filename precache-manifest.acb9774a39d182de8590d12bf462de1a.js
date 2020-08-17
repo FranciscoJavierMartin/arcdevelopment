@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "47c1d12b6994775345cec30addb32840",
+    "revision": "87d87d078478759abcc2af70e5f4a270",
     "url": "/arcdevelopment/index.html"
   },
   {
-    "revision": "1301fd1369eda700bf88",
-    "url": "/arcdevelopment/static/js/2.19252127.chunk.js"
+    "revision": "7650b2ceb366ea4ce00c",
+    "url": "/arcdevelopment/static/js/2.60f29cda.chunk.js"
   },
   {
     "revision": "14c54f8d621b663941f58f815237ec03",
-    "url": "/arcdevelopment/static/js/2.19252127.chunk.js.LICENSE.txt"
+    "url": "/arcdevelopment/static/js/2.60f29cda.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3a76f5754bc66862b30d",
-    "url": "/arcdevelopment/static/js/main.d9fe2629.chunk.js"
+    "revision": "814f2b39afc0ff0cfab3",
+    "url": "/arcdevelopment/static/js/main.2f2c6f46.chunk.js"
   },
   {
     "revision": "68f0c2397112f3bb97e9",
@@ -42,6 +42,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6838a9fb85f01988c85e38475ae59fb0",
     "url": "/arcdevelopment/static/media/mobileIcon.6838a9fb.svg"
+  },
+  {
+    "revision": "c608f23f6d6a6d579e2138bd77b6d054",
+    "url": "/arcdevelopment/static/media/repeatingBackground.c608f23f.svg"
   },
   {
     "revision": "435fc4bc44c1e90d5f00f4efccdb9b1d",
