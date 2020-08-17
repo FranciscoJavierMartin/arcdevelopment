@@ -6,6 +6,7 @@ import ButtonArrow from './ui/ButtonArrow';
 
 import animationData from '../animations/landinganimation/data';
 import customSoftwareIcon from '../assets/Custom Software Icon.svg';
+import mobileAppsIcon from '../assets/mobileIcon.svg';
 
 const useStyles = makeStyles((theme) => ({
   animation: {
@@ -177,7 +178,48 @@ const LandingPage: React.FC = () => {
           </Grid>
         </Grid>
       </Grid>
-      {/*------ End Services block ------*/}
+      {/*------ End Custon software block ------*/}
+      <Grid item>
+        {/*------ iOS/Android block ------*/}
+        <Grid
+          container
+          direction='row'
+          className={classes.serviceContainer}
+          justify={matchesSM ? 'center' : 'flex-end'}
+        >
+          <Grid
+            item
+            style={{
+              textAlign: matchesSM ? 'center' : undefined,
+            }}
+          >
+            <Typography variant='h4'>iOS/Android App Development</Typography>
+            <Typography variant='subtitle1' className={classes.subtitle}>
+              Extend Functionality. Extend Access. Increase Engagment.
+            </Typography>
+            <Typography variant='subtitle1'>
+              Integrate your web experience or create a standalone app
+              {matchesSM ? null : <br />}with either mobile platform.
+            </Typography>
+            <Button variant='outlined' className={classes.learnButton}>
+              <span style={{ marginRight: 15 }}>Learn More</span>
+              <ButtonArrow
+                width={10}
+                height={10}
+                fill={(theme.palette.common as any).blue}
+              />
+            </Button>
+          </Grid>
+          <Grid item style={{ marginRight: matchesSM ? 0 : '5em' }}>
+            <img
+              className={classes.icon}
+              alt='mobile phone icon'
+              src={mobileAppsIcon}
+            />
+          </Grid>
+        </Grid>
+      </Grid>
+      {/*------- End iOS/Android block--------*/}
     </Grid>
   );
 };
