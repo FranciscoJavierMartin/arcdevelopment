@@ -10,6 +10,7 @@ import {
 } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import ButtonArrow from './ui/ButtonArrow';
+import CallToAction from './ui/CallToAction';
 
 import animationData from '../animations/landinganimation/data';
 import customSoftwareIcon from '../assets/Custom Software Icon.svg';
@@ -413,6 +414,11 @@ const LandingPage: React.FC = () => {
         <div className={classes.infoBackground} />
       </Grid>
       {/*------ End Information block ------*/}
+      {/*------ Call to action block ------*/}
+      <Grid item>
+        <CallToAction/>
+      </Grid>
+      {/*------ End Call to action block ------*/}
     </Grid>
   );
 };
