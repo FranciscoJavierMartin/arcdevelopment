@@ -208,7 +208,7 @@ const Header: React.FC<IHeaderProps> = ({
       selectedIndex: 1,
     },
     {
-      name: 'Mobile App Development',
+      name: 'iOS/Android App Development',
       link: MOBILE_APPS_PAGE,
       activeIndex: 1,
       selectedIndex: 2,
