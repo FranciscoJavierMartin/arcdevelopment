@@ -19,6 +19,7 @@ import {
 
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
+import CustomSoftwarePage from './pages/CustomSoftwarePage';
 
 const baseURL =
   process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : '';
@@ -62,7 +63,9 @@ function App() {
           <Route
             exact
             path={CUSTOM_SOFTWARE_PAGE}
-            component={() => <div>Custom software</div>}
+            render={(props) => <CustomSoftwarePage {...props}
+            setCurrentTab={setCurrentTab}
+            setSelectedIndex={setSelectedIndex}/>}
           />
           <Route
             exact
