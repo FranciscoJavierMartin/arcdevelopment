@@ -10,8 +10,8 @@ import {
   useMediaQuery,
 } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import ButtonArrow from './ui/ButtonArrow';
-import CallToAction from './ui/CallToAction';
+import ButtonArrow from '../components/ui/ButtonArrow';
+import CallToAction from '../components/ui/CallToAction';
 
 import {
   ESTIMATE_PAGE,

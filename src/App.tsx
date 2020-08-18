@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/styles';
 
-import theme from './ui/Theme';
-import Header from './ui/Header';
-import Footer from './ui/Footer';
+import theme from './components/ui/Theme';
+import Header from './components/ui/Header';
+import Footer from './components/ui/Footer';
 import {
   HOME_PAGE,
   SERVICES_PAGE,
@@ -15,9 +15,9 @@ import {
   ABOUT_PAGE,
   CONTACT_PAGE,
   ESTIMATE_PAGE,
-} from '../constants/urls';
+} from './constants/urls';
 
-import HomePage from './HomePage';
+import HomePage from './pages/HomePage';
 
 const baseURL =
   process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : '';
