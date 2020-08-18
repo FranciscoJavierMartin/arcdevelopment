@@ -18,6 +18,7 @@ import {
 } from './constants/urls';
 
 import HomePage from './pages/HomePage';
+import ServicesPage from './pages/ServicesPage';
 
 const baseURL =
   process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : '';
@@ -50,7 +51,13 @@ function App() {
           <Route
             exact
             path={SERVICES_PAGE}
-            component={() => <div>Services</div>}
+            render={(props) => (
+              <ServicesPage
+                {...props}
+                setCurrentTab={setCurrentTab}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
           />
           <Route
             exact
