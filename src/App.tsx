@@ -21,6 +21,7 @@ import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import CustomSoftwarePage from './pages/CustomSoftwarePage';
 import MobileAppsPage from './pages/MobileAppsPage';
+import WebsitesPage from './pages/WebsitesPage';
 
 const baseURL =
   process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : '';
@@ -86,7 +87,13 @@ function App() {
           <Route
             exact
             path={WEBSITES_PAGE}
-            component={() => <div>Websites</div>}
+            render={(props) => (
+              <WebsitesPage
+                {...props}
+                setCurrentTab={setCurrentTab}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
           />
           <Route
             exact
