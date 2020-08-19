@@ -20,6 +20,7 @@ import {
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import CustomSoftwarePage from './pages/CustomSoftwarePage';
+import MobileAppsPage from './pages/MobileAppsPage';
 
 const baseURL =
   process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : '';
@@ -63,14 +64,24 @@ function App() {
           <Route
             exact
             path={CUSTOM_SOFTWARE_PAGE}
-            render={(props) => <CustomSoftwarePage {...props}
-            setCurrentTab={setCurrentTab}
-            setSelectedIndex={setSelectedIndex}/>}
+            render={(props) => (
+              <CustomSoftwarePage
+                {...props}
+                setCurrentTab={setCurrentTab}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
           />
           <Route
             exact
             path={MOBILE_APPS_PAGE}
-            component={() => <div>Mobile apps</div>}
+            render={(props) => (
+              <MobileAppsPage
+                {...props}
+                setCurrentTab={setCurrentTab}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
           />
           <Route
             exact
