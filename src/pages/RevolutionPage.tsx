@@ -53,33 +53,45 @@ const RevolutionPage: React.FC<IRevolutionPageProps> = ({ setCurrentTab }) => {
 
   return (
     <Grid container direction='column'>
-      <Grid item className={classes.rowContainer} style={{ marginTop: matchesMD ? "1em" : "2em" }}>
-        <Typography variant='h2' style={{ fontFamily: 'Pacifico' }}  align={matchesMD ? "center" : undefined}>
+      <Grid
+        item
+        className={classes.rowContainer}
+        style={{ marginTop: matchesMD ? '1em' : '2em' }}
+      >
+        <Typography
+          variant='h2'
+          style={{ fontFamily: 'Pacifico' }}
+          align={matchesMD ? 'center' : undefined}
+        >
           The Revolution
         </Typography>
       </Grid>
       <Grid
         item
         container
-        direction={matchesMD ? "column" : "row"}
-        alignItems="center"
+        direction={matchesMD ? 'column' : 'row'}
+        alignItems='center'
         className={classes.rowContainer}
-        style={{ marginTop: "5em" }}
+        style={{ marginTop: '5em' }}
       >
         <Grid item lg>
           <img
             src={vision}
             alt='mountain through binoculars'
             style={{
-              maxWidth: matchesSM ? 300 : "40em",
-              marginRight: matchesMD ? 0 : "5em",
-              marginBottom: matchesMD ? "5em" : 0
+              maxWidth: matchesSM ? 300 : '40em',
+              marginRight: matchesMD ? 0 : '5em',
+              marginBottom: matchesMD ? '5em' : 0,
             }}
           />
         </Grid>
         <Grid item container direction='column' lg style={{ maxWidth: '40em' }}>
           <Grid item>
-            <Typography variant='h4' gutterBottom  align={matchesMD ? "center" : "right"}>
+            <Typography
+              variant='h4'
+              gutterBottom
+              align={matchesMD ? 'center' : 'right'}
+            >
               Vision
             </Typography>
           </Grid>
@@ -139,14 +151,18 @@ const RevolutionPage: React.FC<IRevolutionPageProps> = ({ setCurrentTab }) => {
       <Grid
         item
         container
-        direction={matchesMD ? "column" : "row"}
-        alignItems="center"
+        direction={matchesMD ? 'column' : 'row'}
+        alignItems='center'
         className={classes.rowContainer}
-        style={{ marginTop: "10em", marginBottom: "10em" }}
+        style={{ marginTop: '10em', marginBottom: '10em' }}
       >
         <Grid item container direction='column' lg style={{ maxWidth: '40em' }}>
           <Grid item>
-            <Typography variant='h4' gutterBottom align={matchesMD ? "center" : undefined}>
+            <Typography
+              variant='h4'
+              gutterBottom
+              align={matchesMD ? 'center' : undefined}
+            >
               Technology
             </Typography>
           </Grid>
@@ -221,7 +237,7 @@ const RevolutionPage: React.FC<IRevolutionPageProps> = ({ setCurrentTab }) => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item container lg>
+        <Grid item container lg justify={matchesMD ? 'center' : 'flex-end'}>
           <Lottie
             options={technologyOptions}
             isStopped={true}
@@ -245,14 +261,25 @@ const RevolutionPage: React.FC<IRevolutionPageProps> = ({ setCurrentTab }) => {
       <Grid
         item
         container
-        direction={matchesMD ? "column" : "row"}
+        direction={matchesMD ? 'column' : 'row'}
         className={classes.rowContainer}
-        justify={matchesMD ? "center" : undefined}
-        style={{ backgroundColor: "#B3B3B3", height: "90em" }}
+        justify={matchesMD ? 'center' : undefined}
+        style={{ backgroundColor: '#B3B3B3', height: '90em' }}
       >
-        <Grid item container direction='column' lg alignItems={matchesMD ? "center" : undefined}>
+        <Grid
+          item
+          container
+          direction='column'
+          lg
+          alignItems={matchesMD ? 'center' : undefined}
+        >
           <Grid item>
-            <Typography variant='h4' gutterBottom style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }} align={matchesMD ? "center" : undefined}>
+            <Typography
+              variant='h4'
+              gutterBottom
+              style={{ color: '#000', marginTop: matchesMD ? 0 : '5em' }}
+              align={matchesMD ? 'center' : undefined}
+            >
               Consultation
             </Typography>
           </Grid>
@@ -293,21 +320,36 @@ const RevolutionPage: React.FC<IRevolutionPageProps> = ({ setCurrentTab }) => {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: 'center' }}>
-          <img src={consultation} alt='handshake'width="100%"
-            style={{ maxWidth: 700 }} />
+          <img
+            src={consultation}
+            alt='handshake'
+            width='100%'
+            style={{ maxWidth: 700 }}
+          />
         </Grid>
       </Grid>
       <Grid
         item
         container
-        direction={matchesMD ? "column" : "row"}
+        direction={matchesMD ? 'column' : 'row'}
         className={classes.rowContainer}
-        justify={matchesMD ? "center" : undefined}
-        style={{ backgroundColor: "#FF7373", height: "90em" }}
+        justify={matchesMD ? 'center' : undefined}
+        style={{ backgroundColor: '#FF7373', height: '90em' }}
       >
-        <Grid item container direction='column' lg alignItems={matchesMD ? "center" : undefined}>
+        <Grid
+          item
+          container
+          direction='column'
+          lg
+          alignItems={matchesMD ? 'center' : undefined}
+        >
           <Grid item>
-            <Typography variant='h4' gutterBottom style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}align={matchesMD ? "center" : undefined}>
+            <Typography
+              variant='h4'
+              gutterBottom
+              style={{ color: '#000', marginTop: matchesMD ? 0 : '5em' }}
+              align={matchesMD ? 'center' : undefined}
+            >
               Mockup
             </Typography>
           </Grid>
@@ -344,21 +386,36 @@ const RevolutionPage: React.FC<IRevolutionPageProps> = ({ setCurrentTab }) => {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: 'center' }}>
-          <img src={mockup} alt='basic website design outline'  style={{ maxWidth: 1000 }} width="100%"/>
+          <img
+            src={mockup}
+            alt='basic website design outline'
+            style={{ maxWidth: 1000 }}
+            width='100%'
+          />
         </Grid>
       </Grid>
       <Grid
         item
         container
-        direction={matchesMD ? "column" : "row"}
+        direction={matchesMD ? 'column' : 'row'}
         className={classes.rowContainer}
-        justify={matchesMD ? "center" : undefined}
-        style={{ backgroundColor: "#39B54A", height: "90em" }}
+        justify={matchesMD ? 'center' : undefined}
+        style={{ backgroundColor: '#39B54A', height: '90em' }}
       >
-        <Grid item container direction='column' lg alignItems={matchesMD ? "center" : undefined}>
+        <Grid
+          item
+          container
+          direction='column'
+          lg
+          alignItems={matchesMD ? 'center' : undefined}
+        >
           <Grid item>
-            <Typography variant='h4' gutterBottom align={matchesMD ? "center" : undefined}
-              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}>
+            <Typography
+              variant='h4'
+              gutterBottom
+              align={matchesMD ? 'center' : undefined}
+              style={{ color: '#000', marginTop: matchesMD ? 0 : '5em' }}
+            >
               Review
             </Typography>
           </Grid>
@@ -396,22 +453,31 @@ const RevolutionPage: React.FC<IRevolutionPageProps> = ({ setCurrentTab }) => {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: 'center' }}>
-          <img src={review} alt='magnifying glass'  width="100%" />
+          <img src={review} alt='magnifying glass' width='100%' />
         </Grid>
       </Grid>
       <Grid
         item
         container
-        direction={matchesMD ? "column" : "row"}
+        direction={matchesMD ? 'column' : 'row'}
         className={classes.rowContainer}
-        justify={matchesMD ? "center" : undefined}
-        style={{ backgroundColor: "#A67C52", height: "90em" }}
+        justify={matchesMD ? 'center' : undefined}
+        style={{ backgroundColor: '#A67C52', height: '90em' }}
       >
-        <Grid item container direction='column' lg alignItems={matchesMD ? "center" : undefined}>
+        <Grid
+          item
+          container
+          direction='column'
+          lg
+          alignItems={matchesMD ? 'center' : undefined}
+        >
           <Grid item>
-            <Typography variant='h4' align={matchesMD ? "center" : undefined}
+            <Typography
+              variant='h4'
+              align={matchesMD ? 'center' : undefined}
               gutterBottom
-              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}>
+              style={{ color: '#000', marginTop: matchesMD ? 0 : '5em' }}
+            >
               Design
             </Typography>
           </Grid>
@@ -451,16 +517,25 @@ const RevolutionPage: React.FC<IRevolutionPageProps> = ({ setCurrentTab }) => {
       <Grid
         item
         container
-        direction={matchesMD ? "column" : "row"}
+        direction={matchesMD ? 'column' : 'row'}
         className={classes.rowContainer}
-        justify={matchesMD ? "center" : undefined}
-        style={{ backgroundColor: "#39B54A", height: "90em" }}
+        justify={matchesMD ? 'center' : undefined}
+        style={{ backgroundColor: '#39B54A', height: '90em' }}
       >
-        <Grid item container direction='column' lg alignItems={matchesMD ? "center" : undefined}>
+        <Grid
+          item
+          container
+          direction='column'
+          lg
+          alignItems={matchesMD ? 'center' : undefined}
+        >
           <Grid item>
-            <Typography variant='h4' gutterBottom align={matchesMD ? "center" : undefined}
-              
-              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}>
+            <Typography
+              variant='h4'
+              gutterBottom
+              align={matchesMD ? 'center' : undefined}
+              style={{ color: '#000', marginTop: matchesMD ? 0 : '5em' }}
+            >
               Review
             </Typography>
           </Grid>
@@ -494,14 +569,25 @@ const RevolutionPage: React.FC<IRevolutionPageProps> = ({ setCurrentTab }) => {
       <Grid
         item
         container
-        direction={matchesMD ? "column" : "row"}
+        direction={matchesMD ? 'column' : 'row'}
         className={classes.rowContainer}
-        justify={matchesMD ? "center" : undefined}
-        style={{ backgroundColor: "#FBB03B", height: "90em" }}
+        justify={matchesMD ? 'center' : undefined}
+        style={{ backgroundColor: '#FBB03B', height: '90em' }}
       >
-        <Grid item container direction='column' lg alignItems={matchesMD ? "center" : undefined}>
+        <Grid
+          item
+          container
+          direction='column'
+          lg
+          alignItems={matchesMD ? 'center' : undefined}
+        >
           <Grid item>
-            <Typography variant='h4' gutterBottom style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }} align={matchesMD ? "center" : undefined}>
+            <Typography
+              variant='h4'
+              gutterBottom
+              style={{ color: '#000', marginTop: matchesMD ? 0 : '5em' }}
+              align={matchesMD ? 'center' : undefined}
+            >
               Build
             </Typography>
           </Grid>
@@ -578,14 +664,25 @@ const RevolutionPage: React.FC<IRevolutionPageProps> = ({ setCurrentTab }) => {
       <Grid
         item
         container
-        direction={matchesMD ? "column" : "row"}
+        direction={matchesMD ? 'column' : 'row'}
         className={classes.rowContainer}
-        justify={matchesMD ? "center" : undefined}
-        style={{ backgroundColor: "#C1272D", height: "90em" }}
+        justify={matchesMD ? 'center' : undefined}
+        style={{ backgroundColor: '#C1272D', height: '90em' }}
       >
-        <Grid item container direction='column' lg alignItems={matchesMD ? "center" : undefined}>
+        <Grid
+          item
+          container
+          direction='column'
+          lg
+          alignItems={matchesMD ? 'center' : undefined}
+        >
           <Grid item>
-            <Typography variant='h4' gutterBottom style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }} align={matchesMD ? "center" : undefined}>
+            <Typography
+              variant='h4'
+              gutterBottom
+              style={{ color: '#000', marginTop: matchesMD ? 0 : '5em' }}
+              align={matchesMD ? 'center' : undefined}
+            >
               Launch
             </Typography>
           </Grid>
@@ -634,15 +731,25 @@ const RevolutionPage: React.FC<IRevolutionPageProps> = ({ setCurrentTab }) => {
       <Grid
         item
         container
-        direction={matchesMD ? "column" : "row"}
+        direction={matchesMD ? 'column' : 'row'}
         className={classes.rowContainer}
-        justify={matchesMD ? "center" : undefined}
-        style={{ backgroundColor: "#8E45CE", height: "90em" }}
+        justify={matchesMD ? 'center' : undefined}
+        style={{ backgroundColor: '#8E45CE', height: '90em' }}
       >
-        <Grid item container direction='column' lg alignItems={matchesMD ? "center" : undefined}>
+        <Grid
+          item
+          container
+          direction='column'
+          lg
+          alignItems={matchesMD ? 'center' : undefined}
+        >
           <Grid item>
-            <Typography variant='h4' gutterBottom align={matchesMD ? "center" : undefined}
-              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}>
+            <Typography
+              variant='h4'
+              gutterBottom
+              align={matchesMD ? 'center' : undefined}
+              style={{ color: '#000', marginTop: matchesMD ? 0 : '5em' }}
+            >
               Maintain
             </Typography>
           </Grid>
@@ -690,14 +797,25 @@ const RevolutionPage: React.FC<IRevolutionPageProps> = ({ setCurrentTab }) => {
       <Grid
         item
         container
-        direction={matchesMD ? "column" : "row"}
-        justify={matchesMD ? "center" : undefined}
+        direction={matchesMD ? 'column' : 'row'}
+        justify={matchesMD ? 'center' : undefined}
         className={classes.rowContainer}
-        style={{ backgroundColor: "#29ABE2", height: "90em" }}
+        style={{ backgroundColor: '#29ABE2', height: '90em' }}
       >
-        <Grid item container direction='column' lg alignItems={matchesMD ? "center" : undefined}>
+        <Grid
+          item
+          container
+          direction='column'
+          lg
+          alignItems={matchesMD ? 'center' : undefined}
+        >
           <Grid item>
-            <Typography variant='h4' gutterBottom style={{ color: '#000', marginTop: matchesMD ? 0 : "5em" }} align={matchesMD ? "center" : undefined}>
+            <Typography
+              variant='h4'
+              gutterBottom
+              style={{ color: '#000', marginTop: matchesMD ? 0 : '5em' }}
+              align={matchesMD ? 'center' : undefined}
+            >
               Iterate
             </Typography>
           </Grid>
