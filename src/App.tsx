@@ -22,6 +22,7 @@ import ServicesPage from './pages/ServicesPage';
 import CustomSoftwarePage from './pages/CustomSoftwarePage';
 import MobileAppsPage from './pages/MobileAppsPage';
 import WebsitesPage from './pages/WebsitesPage';
+import RevolutionPage from './pages/RevolutionPage';
 
 const baseURL =
   process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : '';
@@ -98,7 +99,7 @@ function App() {
           <Route
             exact
             path={REVOLUTION_PAGE}
-            component={() => <div>Revolution</div>}
+            render={(props) => <RevolutionPage {...props} setCurrentTab={setCurrentTab} />}
           />
           <Route exact path={ABOUT_PAGE} component={() => <div>About</div>} />
           <Route
