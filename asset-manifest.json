@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/arcdevelopment/static/js/main.557c58ac.chunk.js",
-    "main.js.map": "/arcdevelopment/static/js/main.557c58ac.chunk.js.map",
+    "main.js": "/arcdevelopment/static/js/main.196092fe.chunk.js",
+    "main.js.map": "/arcdevelopment/static/js/main.196092fe.chunk.js.map",
     "runtime-main.js": "/arcdevelopment/static/js/runtime-main.5de153af.js",
     "runtime-main.js.map": "/arcdevelopment/static/js/runtime-main.5de153af.js.map",
-    "static/js/2.e2778354.chunk.js": "/arcdevelopment/static/js/2.e2778354.chunk.js",
-    "static/js/2.e2778354.chunk.js.map": "/arcdevelopment/static/js/2.e2778354.chunk.js.map",
+    "static/js/2.076f9e62.chunk.js": "/arcdevelopment/static/js/2.076f9e62.chunk.js",
+    "static/js/2.076f9e62.chunk.js.map": "/arcdevelopment/static/js/2.076f9e62.chunk.js.map",
     "index.html": "/arcdevelopment/index.html",
-    "precache-manifest.1706934297fbfe066fddf0d6430db79f.js": "/arcdevelopment/precache-manifest.1706934297fbfe066fddf0d6430db79f.js",
+    "precache-manifest.be5569ae0fd9cbd4c598d2ba24e71dc0.js": "/arcdevelopment/precache-manifest.be5569ae0fd9cbd4c598d2ba24e71dc0.js",
     "service-worker.js": "/arcdevelopment/service-worker.js",
-    "static/js/2.e2778354.chunk.js.LICENSE.txt": "/arcdevelopment/static/js/2.e2778354.chunk.js.LICENSE.txt",
+    "static/js/2.076f9e62.chunk.js.LICENSE.txt": "/arcdevelopment/static/js/2.076f9e62.chunk.js.LICENSE.txt",
     "static/media/Custom Software Icon.svg": "/arcdevelopment/static/media/Custom Software Icon.350387f5.svg",
     "static/media/Footer Adornment.svg": "/arcdevelopment/static/media/Footer Adornment.e227d87b.svg",
     "static/media/analytics.svg": "/arcdevelopment/static/media/analytics.19779204.svg",
@@ -24,6 +24,8 @@
     "static/media/extendAccess.svg": "/arcdevelopment/static/media/extendAccess.6323be1c.svg",
     "static/media/facebook.svg": "/arcdevelopment/static/media/facebook.73caaa01.svg",
     "static/media/forwardArrow.svg": "/arcdevelopment/static/media/forwardArrow.0e398eb1.svg",
+    "static/media/founder.jpg": "/arcdevelopment/static/media/founder.1f227262.jpg",
+    "static/media/history.svg": "/arcdevelopment/static/media/history.84deaba5.svg",
     "static/media/img_0.png": "/arcdevelopment/static/media/img_0.3da17966.png",
     "static/media/img_1.png": "/arcdevelopment/static/media/img_1.a006de5a.png",
     "static/media/increaseEngagement.svg": "/arcdevelopment/static/media/increaseEngagement.5813959c.svg",
@@ -37,6 +39,7 @@
     "static/media/mobileIcon.svg": "/arcdevelopment/static/media/mobileIcon.6838a9fb.svg",
     "static/media/mockupIcon.svg": "/arcdevelopment/static/media/mockupIcon.ff5529c6.svg",
     "static/media/outreach.svg": "/arcdevelopment/static/media/outreach.1360c2cf.svg",
+    "static/media/puppy.svg": "/arcdevelopment/static/media/puppy.4d2e3104.svg",
     "static/media/repeatingBackground.svg": "/arcdevelopment/static/media/repeatingBackground.c608f23f.svg",
     "static/media/reviewIcon.svg": "/arcdevelopment/static/media/reviewIcon.6f5512eb.svg",
     "static/media/root.svg": "/arcdevelopment/static/media/root.3ad96c4b.svg",
@@ -45,11 +48,12 @@
     "static/media/swissKnife.svg": "/arcdevelopment/static/media/swissKnife.18d93704.svg",
     "static/media/twitter.svg": "/arcdevelopment/static/media/twitter.435fc4bc.svg",
     "static/media/vision.svg": "/arcdevelopment/static/media/vision.01af09aa.svg",
-    "static/media/websiteIcon.svg": "/arcdevelopment/static/media/websiteIcon.6b90d7dc.svg"
+    "static/media/websiteIcon.svg": "/arcdevelopment/static/media/websiteIcon.6b90d7dc.svg",
+    "static/media/yearbook.svg": "/arcdevelopment/static/media/yearbook.ad8a12c1.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.5de153af.js",
-    "static/js/2.e2778354.chunk.js",
-    "static/js/main.557c58ac.chunk.js"
+    "static/js/2.076f9e62.chunk.js",
+    "static/js/main.196092fe.chunk.js"
   ]
 }

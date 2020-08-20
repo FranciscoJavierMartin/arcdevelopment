@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "efebe16b7b857b9696a3e43874e182c4",
+    "revision": "37bfca635b66e2d33c1d0039bf21f9c5",
     "url": "/arcdevelopment/index.html"
   },
   {
-    "revision": "60e9caad87fe134dbd31",
-    "url": "/arcdevelopment/static/js/2.e2778354.chunk.js"
+    "revision": "cdbcab237c1db6828011",
+    "url": "/arcdevelopment/static/js/2.076f9e62.chunk.js"
   },
   {
     "revision": "14c54f8d621b663941f58f815237ec03",
-    "url": "/arcdevelopment/static/js/2.e2778354.chunk.js.LICENSE.txt"
+    "url": "/arcdevelopment/static/js/2.076f9e62.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c986b3a31cb388a961a8",
-    "url": "/arcdevelopment/static/js/main.557c58ac.chunk.js"
+    "revision": "e77947a95424f939b21a",
+    "url": "/arcdevelopment/static/js/main.196092fe.chunk.js"
   },
   {
     "revision": "68f0c2397112f3bb97e9",
@@ -76,6 +76,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/arcdevelopment/static/media/forwardArrow.0e398eb1.svg"
   },
   {
+    "revision": "1f227262776a7878664d2eef7f931ff8",
+    "url": "/arcdevelopment/static/media/founder.1f227262.jpg"
+  },
+  {
+    "revision": "84deaba55d2b90c888cbb6adbee41c38",
+    "url": "/arcdevelopment/static/media/history.84deaba5.svg"
+  },
+  {
     "revision": "3da1796662364aee80073a24c121ff51",
     "url": "/arcdevelopment/static/media/img_0.3da17966.png"
   },
@@ -128,6 +136,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/arcdevelopment/static/media/outreach.1360c2cf.svg"
   },
   {
+    "revision": "4d2e310400290a95679fd23d80d77dfd",
+    "url": "/arcdevelopment/static/media/puppy.4d2e3104.svg"
+  },
+  {
     "revision": "c608f23f6d6a6d579e2138bd77b6d054",
     "url": "/arcdevelopment/static/media/repeatingBackground.c608f23f.svg"
   },
@@ -162,5 +174,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6b90d7dca8c7d0d5340cc0748c6bdb3c",
     "url": "/arcdevelopment/static/media/websiteIcon.6b90d7dc.svg"
+  },
+  {
+    "revision": "ad8a12c115fa73d4b87417b378f8e69e",
+    "url": "/arcdevelopment/static/media/yearbook.ad8a12c1.svg"
   }
 ]);
