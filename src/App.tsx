@@ -24,6 +24,7 @@ import MobileAppsPage from './pages/MobileAppsPage';
 import WebsitesPage from './pages/WebsitesPage';
 import RevolutionPage from './pages/RevolutionPage';
 import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 
 const baseURL =
   process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : '';
@@ -114,7 +115,9 @@ function App() {
           <Route
             exact
             path={CONTACT_PAGE}
-            component={() => <div>Contact</div>}
+            render={(props) => (
+              <ContactPage {...props} setCurrentTab={setCurrentTab} />
+            )}
           />
           <Route
             exact
