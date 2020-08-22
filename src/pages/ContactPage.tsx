@@ -76,6 +76,10 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: theme.palette.secondary.light,
     },
+    [theme.breakpoints.down('sm')]: {
+      height: 40,
+      width: 225,
+    },
   },
 }));
 
@@ -87,7 +91,6 @@ const ContactPage: React.FC<IContactPageProps> = ({ setCurrentTab }) => {
   const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
 
   const [name, setName] = useState<string>('');
-  const [nameHelper, setNameHelper] = useState<string>('');
 
   const [email, setEmail] = useState<string>('');
   const [emailHelper, setEmailHelper] = useState<string>('');
@@ -96,7 +99,6 @@ const ContactPage: React.FC<IContactPageProps> = ({ setCurrentTab }) => {
   const [phoneHelper, setPhoneHelper] = useState<string>('');
 
   const [message, setMessage] = useState<string>('');
-  const [messageHelper, setMessageHelper] = useState<string>('');
 
   const [open, setOpen] = useState<boolean>(false);
 
@@ -299,7 +301,9 @@ const ContactPage: React.FC<IContactPageProps> = ({ setCurrentTab }) => {
         </Grid>
       </Grid>
       <Dialog
+        style={{ zIndex: 1302 }}
         open={open}
+        fullScreen={matchesXS}
         onClose={() => setOpen(false)}
         PaperProps={{
           style: {
@@ -319,7 +323,6 @@ const ContactPage: React.FC<IContactPageProps> = ({ setCurrentTab }) => {
               : matchesMD
               ? '10em'
               : '20em',
-            //zIndex: 3000,
           },
         }}
       >
@@ -363,7 +366,7 @@ const ContactPage: React.FC<IContactPageProps> = ({ setCurrentTab }) => {
                 onChange={onChange}
               />
             </Grid>
-            <Grid item style={{ maxWidth: '20em' }}>
+            <Grid item style={{ maxWidth: matchesXS ? '100%' : '20em' }}>
               <TextField
                 InputProps={{ disableUnderline: true }}
                 multiline
@@ -381,6 +384,7 @@ const ContactPage: React.FC<IContactPageProps> = ({ setCurrentTab }) => {
               container
               style={{ marginTop: '2em' }}
               alignItems='center'
+              direction={matchesSM ? 'column' : 'row'}
             >
               <Grid item>
                 <Button
