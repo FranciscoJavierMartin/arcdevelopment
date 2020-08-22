@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/arcdevelopment/static/js/main.196092fe.chunk.js",
-    "main.js.map": "/arcdevelopment/static/js/main.196092fe.chunk.js.map",
+    "main.js": "/arcdevelopment/static/js/main.1376c09f.chunk.js",
+    "main.js.map": "/arcdevelopment/static/js/main.1376c09f.chunk.js.map",
     "runtime-main.js": "/arcdevelopment/static/js/runtime-main.5de153af.js",
     "runtime-main.js.map": "/arcdevelopment/static/js/runtime-main.5de153af.js.map",
-    "static/js/2.076f9e62.chunk.js": "/arcdevelopment/static/js/2.076f9e62.chunk.js",
-    "static/js/2.076f9e62.chunk.js.map": "/arcdevelopment/static/js/2.076f9e62.chunk.js.map",
+    "static/js/2.be2e62dd.chunk.js": "/arcdevelopment/static/js/2.be2e62dd.chunk.js",
+    "static/js/2.be2e62dd.chunk.js.map": "/arcdevelopment/static/js/2.be2e62dd.chunk.js.map",
     "index.html": "/arcdevelopment/index.html",
-    "precache-manifest.be5569ae0fd9cbd4c598d2ba24e71dc0.js": "/arcdevelopment/precache-manifest.be5569ae0fd9cbd4c598d2ba24e71dc0.js",
+    "precache-manifest.3cad35e43ae89472ee721d023437e9ae.js": "/arcdevelopment/precache-manifest.3cad35e43ae89472ee721d023437e9ae.js",
     "service-worker.js": "/arcdevelopment/service-worker.js",
-    "static/js/2.076f9e62.chunk.js.LICENSE.txt": "/arcdevelopment/static/js/2.076f9e62.chunk.js.LICENSE.txt",
+    "static/js/2.be2e62dd.chunk.js.LICENSE.txt": "/arcdevelopment/static/js/2.be2e62dd.chunk.js.LICENSE.txt",
     "static/media/Custom Software Icon.svg": "/arcdevelopment/static/media/Custom Software Icon.350387f5.svg",
     "static/media/Footer Adornment.svg": "/arcdevelopment/static/media/Footer Adornment.e227d87b.svg",
     "static/media/analytics.svg": "/arcdevelopment/static/media/analytics.19779204.svg",
@@ -21,6 +21,7 @@
     "static/media/consultationIcon.svg": "/arcdevelopment/static/media/consultationIcon.f66c9bff.svg",
     "static/media/designIcon.svg": "/arcdevelopment/static/media/designIcon.5afdf5d4.svg",
     "static/media/ecommerce.svg": "/arcdevelopment/static/media/ecommerce.12e4fb63.svg",
+    "static/media/email.svg": "/arcdevelopment/static/media/email.b90c2773.svg",
     "static/media/extendAccess.svg": "/arcdevelopment/static/media/extendAccess.6323be1c.svg",
     "static/media/facebook.svg": "/arcdevelopment/static/media/facebook.73caaa01.svg",
     "static/media/forwardArrow.svg": "/arcdevelopment/static/media/forwardArrow.0e398eb1.svg",
@@ -39,10 +40,12 @@
     "static/media/mobileIcon.svg": "/arcdevelopment/static/media/mobileIcon.6838a9fb.svg",
     "static/media/mockupIcon.svg": "/arcdevelopment/static/media/mockupIcon.ff5529c6.svg",
     "static/media/outreach.svg": "/arcdevelopment/static/media/outreach.1360c2cf.svg",
+    "static/media/phone.svg": "/arcdevelopment/static/media/phone.171f2b32.svg",
     "static/media/puppy.svg": "/arcdevelopment/static/media/puppy.4d2e3104.svg",
     "static/media/repeatingBackground.svg": "/arcdevelopment/static/media/repeatingBackground.c608f23f.svg",
     "static/media/reviewIcon.svg": "/arcdevelopment/static/media/reviewIcon.6f5512eb.svg",
     "static/media/root.svg": "/arcdevelopment/static/media/root.3ad96c4b.svg",
+    "static/media/send.svg": "/arcdevelopment/static/media/send.cdaac4cc.svg",
     "static/media/seo.svg": "/arcdevelopment/static/media/seo.72de4d77.svg",
     "static/media/stopwatch.svg": "/arcdevelopment/static/media/stopwatch.9ce632eb.svg",
     "static/media/swissKnife.svg": "/arcdevelopment/static/media/swissKnife.18d93704.svg",
@@ -53,7 +56,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.5de153af.js",
-    "static/js/2.076f9e62.chunk.js",
-    "static/js/main.196092fe.chunk.js"
+    "static/js/2.be2e62dd.chunk.js",
+    "static/js/main.1376c09f.chunk.js"
   ]
 }
