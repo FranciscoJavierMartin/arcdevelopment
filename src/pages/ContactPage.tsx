@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import {
   Grid,
   Typography,
@@ -7,6 +8,8 @@ import {
   TextField,
   Dialog,
   DialogContent,
+  CircularProgress,
+  Snackbar,
   makeStyles,
   useTheme,
   useMediaQuery,
@@ -102,6 +105,14 @@ const ContactPage: React.FC<IContactPageProps> = ({ setCurrentTab }) => {
 
   const [open, setOpen] = useState<boolean>(false);
 
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const [alert, setAlert] = useState({
+    open: false,
+    message: '',
+    backgroundColor: '',
+  });
+
   const onChange = (
     event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
@@ -139,6 +150,48 @@ const ContactPage: React.FC<IContactPageProps> = ({ setCurrentTab }) => {
     }
   };
 
+  const onConfirm = () => {
+    setLoading(true);
+    axios
+      .get('<url-to-firebase>', {
+        params: {
+          name,
+          email,
+          phone,
+          message,
+        }
+      })
+      .then(() => {
+        setName('');
+        setEmail('');
+        setPhone('');
+        setMessage('');
+        setAlert({
+          open: true,
+          message: 'Message sent successfully',
+          backgroundColor: '#4BB543',
+        });
+      })
+      .catch((err) => {
+        console.error(err);
+        setAlert({
+          open: true,
+          message: 'Something went wrong, please try again!',
+          backgroundColor: '#FF3232',
+        });
+      })
+      .finally(() => {
+        setLoading(false);
+        setOpen(false);
+      });
+  };
+
+  const buttonContents = (
+    <React.Fragment>
+      Send Message
+      <img src={airplane} alt='paper airplane' style={{ marginLeft: '1em' }} />
+    </React.Fragment>
+  );
   return (
     <Grid container direction='row'>
       <Grid
@@ -289,12 +342,7 @@ const ContactPage: React.FC<IContactPageProps> = ({ setCurrentTab }) => {
                 className={classes.sendButton}
                 onClick={() => setOpen(true)}
               >
-                Send Message
-                <img
-                  src={airplane}
-                  alt='paper airplane'
-                  style={{ marginLeft: '1em' }}
-                />
+                {buttonContents}
               </Button>
             </Grid>
           </Grid>
@@ -407,20 +455,23 @@ const ContactPage: React.FC<IContactPageProps> = ({ setCurrentTab }) => {
                   }
                   variant='contained'
                   className={classes.sendButton}
-                  onClick={() => setOpen(true)}
+                  onClick={onConfirm}
                 >
-                  Send Message
-                  <img
-                    src={airplane}
-                    alt='paper airplane'
-                    style={{ marginLeft: '1em' }}
-                  />
+                  {loading ? <CircularProgress size={30} /> : buttonContents}
                 </Button>
               </Grid>
             </Grid>
           </Grid>
         </DialogContent>
       </Dialog>
+      <Snackbar
+        open={alert.open}
+        message={alert.message}
+        ContentProps={{ style: { backgroundColor: alert.backgroundColor } }}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        onClose={() => setAlert({ ...alert, open: false })}
+        autoHideDuration={4000}
+      />
       <Grid
         item
         container
