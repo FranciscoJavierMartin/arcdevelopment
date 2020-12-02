@@ -20,8 +20,8 @@ import {
 } from '../constants/urls';
 
 interface IServicesPageProps {
-  setCurrentTab: (value: number) => void;
-  setSelectedIndex: (value: number) => void;
+  setCurrentTab: React.Dispatch<React.SetStateAction<number>>;
+  setSelectedIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const useStyles = makeStyles((theme) => ({

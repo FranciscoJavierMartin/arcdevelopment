@@ -22,7 +22,7 @@ import technologyAnimation from '../animations/technologyAnimation/data.json';
 import CallToAction from '../components/ui/CallToAction';
 
 interface IRevolutionPageProps {
-  setCurrentTab: (value: number) => void;
+  setCurrentTab: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const useStyles = makeStyles((theme) => ({

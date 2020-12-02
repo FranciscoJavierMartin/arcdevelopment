@@ -23,8 +23,8 @@ import integrationAnimation from '../animations/integrationAnimation/data.json';
 import { CUSTOM_SOFTWARE_PAGE, WEBSITES_PAGE } from '../constants/urls';
 
 interface IMobileAppsPageProps {
-  setCurrentTab: (value: number) => void;
-  setSelectedIndex: (value: number) => void;
+  setCurrentTab: React.Dispatch<React.SetStateAction<number>>;
+  setSelectedIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const useStyles = makeStyles((theme) => ({

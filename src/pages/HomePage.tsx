@@ -31,8 +31,8 @@ import revolutionBackground from '../assets/repeatingBackground.svg';
 import infoBackground from '../assets/infoBackground.svg';
 
 interface IHomePageProps {
-  setCurrentTab: (value: number) => void;
-  setSelectedIndex: (value: number) => void;
+  setCurrentTab: React.Dispatch<React.SetStateAction<number>>;
+  setSelectedIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const useStyles = makeStyles((theme) => ({

@@ -28,8 +28,8 @@ import uxAnimation from '../animations/uxAnimation/data';
 import { SERVICES_PAGE, MOBILE_APPS_PAGE } from '../constants/urls';
 
 interface ICustomSoftwarePageProps {
-  setCurrentTab: (value: number) => void;
-  setSelectedIndex: (value: number) => void;
+  setCurrentTab: React.Dispatch<React.SetStateAction<number>>;
+  setSelectedIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const useStyles = makeStyles((theme) => ({

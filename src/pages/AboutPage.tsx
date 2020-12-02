@@ -16,7 +16,7 @@ import yearbook from '../assets/yearbook.svg';
 import puppy from '../assets/puppy.svg';
 
 interface IAboutPageProps {
-  setCurrentTab: (value: number) => void;
+  setCurrentTab: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const useStyles = makeStyles((theme) => ({

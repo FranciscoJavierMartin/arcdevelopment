@@ -26,7 +26,7 @@ import airplane from '../assets/send.svg';
 import { REVOLUTION_PAGE } from '../constants/urls';
 
 interface IContactPageProps {
-  setCurrentTab: (value: number) => void;
+  setCurrentTab: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const useStyles = makeStyles((theme) => ({

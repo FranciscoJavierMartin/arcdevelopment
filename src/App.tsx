@@ -25,6 +25,7 @@ import WebsitesPage from './pages/WebsitesPage';
 import RevolutionPage from './pages/RevolutionPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import EstimatePage from './pages/EstimatePage';
 
 const baseURL =
   process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : '';
@@ -122,7 +123,13 @@ function App() {
           <Route
             exact
             path={ESTIMATE_PAGE}
-            component={() => <div>Estimate</div>}
+            render={(props) => (
+              <EstimatePage
+                {...props}
+                setCurrentTab={setCurrentTab}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
           />
         </Switch>
         <Footer
